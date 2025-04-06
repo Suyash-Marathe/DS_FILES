@@ -1,57 +1,37 @@
 #include<iostream>
 using namespace std;
 
-int main()
-
+int main ()
 {
+    int l=0, m, u=4, e, i, f = 0;
 
-int arr[10], i, num, n, c=0, pos;
+    int a[5] = {1, 2, 3, 4, 5};
 
-cout<<"Enter the array size: ";
+    cout << "Enter Item : ";
+    cin >> e;
 
-cin>>n;
+    while (l <= u)
+    {
+        m = (l + u) / 2;
 
-cout<<"Enter Array Elements: ";
+        if (a[m] == e)
+        {
+           f = 1;
+            break;
+        }
 
-for(i=0; i<n; i++)
+        if (a[m] < e)
+        l = (m + 1);
+        else
+        u = (m - 1);
+    }
 
-{
-cin>>arr[i];
-}
-
-cout<<"Enter the number to be search: ";
-
-cin>>num;
-
-for(i=0; i<n; i++)
-
-{
-
-if(arr[i]==num)
-
-{
-
-c=1;
-
-pos=i+1;
-
-break;
-
-}
-
-}
-
-if(c==0)
-
-{
-cout<<"Number not found..!!";
-}
-
-
-
-else
-
-{
-cout<<num<<" found at position "<<pos;
-}
+    if (f == 1)
+    {
+        cout << "Found";
+    }
+    else
+    {
+        cout << "Not Found";
+    }
 }
